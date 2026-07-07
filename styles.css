@@ -1,0 +1,478 @@
+:root {
+  --gold: #d9b24a;
+  --gold-dark: #9b6f17;
+  --black: #090909;
+  --white: #fcf7ef;
+  --cream: #efe1c6;
+  --muted: #7a6b51;
+  --border: rgba(217, 178, 74, 0.22);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--black);
+  background: linear-gradient(135deg, #f9f2e6 0%, #f3ebdc 100%);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  background: rgba(9, 9, 9, 0.75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar.scrolled {
+  padding: 0.6rem 0;
+  background: rgba(9, 9, 9, 0.95);
+}
+
+.navbar-brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--gold);
+}
+
+.hero-section {
+  min-height: 100vh;
+  padding: 8rem 0 5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(120deg, rgba(7, 7, 7, 0.94) 0%, rgba(22, 16, 10, 0.92) 55%, rgba(71, 48, 17, 0.84) 100%);
+  color: var(--white);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at top left, rgba(217, 178, 74, 0.2), transparent 24%), radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.1), transparent 30%);
+  pointer-events: none;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow,
+.section-label {
+  display: inline-block;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-section h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.35rem, 4.4vw, 4.2rem);
+  line-height: 1.08;
+  margin-bottom: 1rem;
+  max-width: 700px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.8rem;
+  max-width: 620px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, #f2d16d 100%);
+  color: var(--black);
+  border: 1px solid transparent;
+  box-shadow: 0 12px 30px rgba(217, 178, 74, 0.24);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  color: var(--black);
+  box-shadow: 0 16px 36px rgba(217, 178, 74, 0.34);
+}
+
+.btn-outline {
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-highlights div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-visual {
+  position: relative;
+  padding: 1rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.section {
+  padding: 6.5rem 0;
+}
+
+.about-section,
+.products-section,
+.contact-section {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+}
+
+.section-heading h2,
+.about-section h2,
+.franchise-section h2,
+.contact-section h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.about-section p,
+.franchise-section p,
+.contact-section p,
+.feature-card p,
+.product-card p,
+.testimonial-card p,
+.footer p,
+.footer li,
+.contact-info-card span {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.about-card,
+.franchise-card,
+.contact-form-card,
+.map-card,
+.testimonial-card,
+.stats-card,
+.feature-card,
+.product-card {
+  border: 1px solid var(--border);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow);
+}
+
+.about-card img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 1.4rem;
+}
+
+.feature-card,
+.product-card,
+.testimonial-card,
+.stats-card {
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.feature-card i,
+.contact-info-card i,
+.social-links i {
+  font-size: 1.4rem;
+  color: var(--gold-dark);
+  margin-bottom: 0.8rem;
+}
+
+.feature-card h3,
+.product-card h3,
+.testimonial-card h3,
+.franchise-card h3,
+.footer h3,
+.footer h4 {
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 0.7rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.partner-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 2rem;
+}
+
+.partner-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.franchise-card {
+  padding: 1.8rem;
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.process-step:last-child {
+  border-bottom: none;
+}
+
+.process-step span {
+  font-weight: 700;
+  color: var(--gold-dark);
+  font-size: 1.15rem;
+}
+
+.testimonial-card span {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.stats-card h3 {
+  font-size: 2.2rem;
+  color: var(--gold-dark);
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 0.3rem;
+}
+
+.contact-info-card {
+  padding: 1.2rem 0 0.8rem;
+}
+
+.contact-info-card > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.contact-form-card {
+  padding: 1.5rem;
+}
+
+.form-label {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.9rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.map-card {
+  padding: 0.8rem;
+}
+
+.map-card iframe {
+  width: 100%;
+  min-height: 280px;
+  border: 0;
+  border-radius: 1rem;
+}
+
+.footer {
+  padding: 4rem 0 1.5rem;
+  background: #060606;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer li {
+  margin-bottom: 0.6rem;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer a:hover {
+  color: var(--gold);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(217, 178, 74, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: rgba(217, 178, 74, 0.16);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: all 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 991px) {
+  .hero-section {
+    padding-top: 7rem;
+  }
+
+  .hero-visual img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .hero-section {
+    padding-top: 6rem;
+  }
+
+  .hero-actions,
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .hero-visual img {
+    height: 300px;
+  }
+
+  .about-card img {
+    height: 320px;
+  }
+}
